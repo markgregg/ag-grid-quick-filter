@@ -1,0 +1,49 @@
+.csQuickFilterSelection {
+  border-radius: 2px;
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: var(--QuickFilterSelectSelectedBackgroundColor, Lightgray);
+  background-image: var(--QuickFilterSelectSelectedBackgroundImage);
+}
+
+.csQuickFilterSelectionDisabled {
+  color: var(--QuickFilterSelectDisabledFontColor);
+  background-color: var(--QuickFilterSelectDisabledBackgroundColor, Gainsboro);
+  background-image: var(--QuickFilterSelectDisabledBackgroundImage);
+}
+
+.csQuickFilterSelectionActive {
+  background-color: var(--QuickFilterSelectSelectedBackgroundColor, Lightgray);
+  background-image: var(--QuickFilterSelectSelectedBackgroundImage);
+  border: var(--QuickFilterSelectSelectedActiveColor, yellow) 2px solid;
+}
+
+.csQuickFilterContentAlign {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.csQuickFilterSelectionText {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.csQuickFilterPrefixText {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  font-size: var(--QuickFilterSelectPrefixFontSize, xx-small);
+  font-weight: var(--QuickFilterSelectPrefixFontWeight, bold);
+}
+
+.csQuickFilterDeselect {
+  color: var(--QuickFilterSelectDeslectIconColor);
+  font-size: var(--QuickFilterSelectDeslectIconSize, small);
+}
+
+.csQuickFilterDeselect:hover {
+  color: var(--QuickFilterSelectDeslectHighlightIconColor, Lightgray);
+}

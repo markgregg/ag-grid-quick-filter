@@ -1,0 +1,23 @@
+{
+  "name": "ag-grid-quick-filter",
+  "private": true,
+  "description": "Universal filter for Ag-Grid",
+  "keywords": [],
+  "author": "Mark Gregg <gregg.mark@gmail.com> (https://github.com/markgregg)",
+  "workspaces": [
+    "examples/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "publish": "cd packages/ag-grid-quick-filter && npm run build && npm publish",
+    "start-local": "cd examples/ag-grid-quick-filter && npm run prepare && npm run start",
+    "start-live": "cd examples/ag-grid-quick-filter && npm install ag-grid-quick-filter@latest && npm run start",
+    "deploy": "cd examples/ag-grid-quick-filter && npm run deploy",
+    "install": "cd packages/ag-grid-quick-filter && npm install && cd ../../examples/ag-grid-quick-filter && npm install"
+  },
+  "devDependencies": {
+    "prettier": "^2.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

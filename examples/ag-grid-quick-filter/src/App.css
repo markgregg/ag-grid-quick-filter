@@ -1,0 +1,131 @@
+:root {
+  --universalMaxListHeight: 600px;
+}
+
+.frame {
+  height: 100vh;
+  width: 95vw;
+}
+
+.page {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.body {
+  display: inline-block;
+  position: absolute;
+  width: 1200px;
+  padding: 165px 10px 10px;
+  background-color: var(--pageColor1);
+  color: var(--pageFont);
+}
+
+.plain {
+  background: url(/public/plain.jpg) no-repeat center center fixed;
+}
+
+.dark {
+  background: url(/public/dark.jpg) no-repeat center center fixed;
+}
+
+.light {
+  background: url(/public/light.jpg) no-repeat center center fixed;
+}
+
+.blue {
+  background: url(/public/blue.jpg) no-repeat center center fixed;
+}
+
+.header {
+  display: inline-block;
+  position: absolute;
+  width: 1200px;
+  z-index: 1;
+  color: var(--pageFont);
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  margin-block-start: 0.3em;
+  margin-block-end: 0.1em;
+}
+
+.statement {
+  font-weight: 200;
+}
+
+.menu-bar {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, var(--pageColor3), var(--pageColor2));
+  box-shadow: 6px 6px var(--pageColor4);
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.menu-item {
+  width: 80px;
+  font-size: medium;
+  font-weight: bold;
+  text-align: center;
+  color: var(--universalSelectFontColor);
+}
+
+.menu-item:hover {
+  color: var(--compactSelectFonHighlightColor,darkgray);
+}
+
+.menu-text {
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.context {
+  width: 100%;
+}
+
+.theme {
+  display: block;
+  align-self: flex-end;
+  --compactSelectBorder: none;
+  --compactSelectBackgroundColor: var(--pageColor2);
+  --compactSelectHighlightedBackgroundColor: var(--pageColor3);
+}
+
+.clipboardCopy {
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  background-color: var(--pageColor2);
+  color: var(--universalSelectFontColor);
+  box-shadow: 6px 6px var(--pageColor4);
+}

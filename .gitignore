@@ -102,3 +102,7 @@ dist
 
 # TernJS port file
 .tern-port
+/packages/universal-select/lib/cjs
+/packages/universal-select/lib/esm
+/packages/ag-grid-quick-filter/lib/esm
+/packages/ag-grid-quick-filter/lib/cjs

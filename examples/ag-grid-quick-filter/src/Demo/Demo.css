@@ -1,0 +1,46 @@
+.bond-demo {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  height: 700px;
+  width: 100%;
+}
+
+.select-area {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.help_container {
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.help {
+  font-size: large;
+  border-radius: 5px;
+  height: 100%;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-left: 3px;
+  padding-right: 3px;
+  color: var(--universalSelectFontColor);
+  background-color: var(--pageColor3);
+}
+
+.headings {
+  margin-block-end: 0px;
+}
+
+.prefixes {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}

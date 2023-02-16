@@ -1,0 +1,47 @@
+import CSS from 'csstype';
+import { IconType } from 'react-icons/lib';
+import { ChoiceProps, ChoiceStyle, SelectionProps, SelectionStyle } from './';
+
+export interface SelectStyle {
+  choiceComponent?: (props: ChoiceProps & ChoiceStyle) => JSX.Element;
+  selectComponent?: (props: SelectionProps & SelectionStyle) => JSX.Element;
+  selectStyle?: CSS.Properties;
+  selectDisabledStyle?: CSS.Properties;
+  className?: string;
+  disabledClassName?: string;
+  inputStyle?: CSS.Properties;
+  inputDisabledStyle?: CSS.Properties;
+  inputClassName?: CSS.Properties;
+  inputDisabledClassName?: string;
+  clearSelectionStyle?: CSS.Properties;
+  clearSelectionDisabledStyle?: CSS.Properties;
+  clearSelectionHoverStyle?: CSS.Properties;
+  clearSelectionClassName?: string;
+  clearSelectionDisabledClassName?: string;
+  clearSelectionHoverClassName?: string;
+  titleStyle?: CSS.Properties;
+  titleDisabledStyle?: CSS.Properties;
+  titleClassName?: string;
+  titleDisabledClassName?: string;
+  textDisplayClassName?: string;
+  textDisplayDisabledClassName?: string;
+  dropdownIconStyle?: CSS.Properties;
+  dropdownIcondisabledStyle?: CSS.Properties;
+  dropIconClassName?: string;
+  dropIconDisabledClassName?: string;
+  choiceListStyle?: CSS.Properties;
+  choiceListClassName?: string;
+  loadingTextStyle?: CSS.Properties;
+  loadingTextClassName?: string;
+  catagoryStyle?: CSS.Properties;
+  catagoryClassName?: string;
+  hideDropdownIcon?: boolean;
+  dropdownIcon?: IconType;
+  clearSelectionIcon?: IconType;
+  style?: CSS.Properties;
+  hideTitle?: boolean;
+  height?: CSS.Property.Height;
+  width?: CSS.Property.Width;
+  minWidth?: CSS.Property.MinWidth;
+  maxWidth?: CSS.Property.MaxWidth;
+}

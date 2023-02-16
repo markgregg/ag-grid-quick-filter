@@ -1,0 +1,120 @@
+.examples {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.controls {
+  height: 670px;
+  position: relative;
+  padding-top: 25px;
+  padding-left: 200px;
+  width: 100%;
+  overflow: auto;
+}
+
+.demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-block-end: 50px;
+  width: 800px;
+}
+
+.demo-title {
+  width: 100%;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.copy-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+  margin-block-end: 20px;
+}
+
+.nospace {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.demo-point {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-left: 40px;
+}
+
+.demo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.demo-description {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-block-end: 10px;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 100%;
+}
+
+.copy-wrapper {
+  position: relative;
+}
+
+.copied-text {
+  position: absolute;
+  background-color: white;
+  color: black;
+  top: -40px;
+  z-index: 1;
+}
+
+.code {
+  box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
+}
+
+.icon-spin {
+  animation: spin-animation 0.5s infinite;
+  display: inline-block;
+}
+
+@keyframes spin-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}
+
+.icon-blink {
+  animation: blink 2s steps(5, start) infinite;
+  -webkit-animation: blink 1s steps(5, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}

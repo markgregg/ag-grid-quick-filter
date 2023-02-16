@@ -1,0 +1,17 @@
+.csQuickFilterChoice {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.csQuickFilterChoiceText {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.csQuickFilterChoiceHighlighed {
+  background-color: var(--QuickFilterSelectHighlihtedBackgroundColor, lightgray);
+  background-image: var(--QuickFilterSelectHighlihtedBackgroundImage);
+}

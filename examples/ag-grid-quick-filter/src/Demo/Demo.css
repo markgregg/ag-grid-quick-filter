@@ -32,7 +32,7 @@
   display: flex;
   padding-left: 3px;
   padding-right: 3px;
-  color: var(--universalSelectFontColor);
+  color: #f1c420;
   background-color: var(--pageColor3);
 }
 
@@ -43,4 +43,8 @@
 .prefixes {
   margin-block-start: 0px;
   margin-block-end: 0px;
+}
+
+.explaination {
+  font-size: small;
 }

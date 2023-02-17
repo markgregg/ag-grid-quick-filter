@@ -28,6 +28,7 @@
 .csQuickFilterDropDownIcon {
   font-size: var(--QuickFilterSelectDropdownIconSize, large);
   color: var(--QuickFilterSelectDropdownIconColor);
+  display: flex;
 }
 
 .csQuickFilterClearSelection {
@@ -119,4 +120,11 @@ input:focus {
 .csQuickFilterNoItems {
   margin-block-start: 0px;
   margin-block-end: 0px;
+}
+
+.csQuickFilterDividor {
+  position: absolute;
+  top: 20%;
+  height: 60%;
+  border-left: Lightgray 2px solid;
 }

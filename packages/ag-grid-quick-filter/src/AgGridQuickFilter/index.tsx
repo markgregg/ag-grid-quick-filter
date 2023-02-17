@@ -22,7 +22,7 @@ import {
 } from "../types";
 import "./AgGridQuickFilter.css";
 import QuickFiltersalSelection from "../FilterSelection";
-import { createAgGridQuickFilterModel, AgGridQuickFilterModel } from "./AgGridQuickFilter";
+import { createAgGridQuickFilterModel, AgGridQuickFilterModel } from "./AgGridQuickFilterModel";
 
 export interface AgGridQuickFilterProps
   extends SelectProps,
@@ -95,7 +95,7 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
       : ( props.titleClassName  ? ` ${props.titleClassName}` : "" );
 
   const dropdownIconStyle = (): CSS.Properties =>
-    props.dropdownIconStyle ?? {};
+    props.dropdownIconStyle ?? { marginLeft: '4px' };
 
   const choiceProps = (
     highlighted: boolean,
@@ -244,6 +244,7 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
         )}
         {!props.hideDropdownIcon && (
           <div className="csQuickFilterDropDownIcon">
+            <span className="csQuickFilterDividor" />
             {props.dropdownIcon ? (
               <props.dropdownIcon 
                 className={props.dropIconClassName} 

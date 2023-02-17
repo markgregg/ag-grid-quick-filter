@@ -1,13 +1,14 @@
 import CompactSelect from "compact-select";
 import React, { useState, useEffect } from "react";
 import Examples from "./Examples";
+import GettingStarted from './GettingStarted';
 import "./App.css";
 import Demo from "./Demo";
 import { applyTheme, themes, Themes } from "./themes/themes";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
-const pages = ["Examples", "Demo", "Back To Demos"];
+const pages = ["Examples", "Demo", "Getting Started", "Back To Demos"];
  
 const App = () => {
   const [themeName, setThemeName] = useState<string>(Themes.Plain.toString());
@@ -78,7 +79,8 @@ const App = () => {
           <div className="context">
             {
               (page === "Examples" && <Examples/>) ||
-              (page === "Demo" && <Demo/>)
+              (page === "Demo" && <Demo/>) ||
+              (page === "Getting Started"  && <GettingStarted/>)
             }
           </div>
           <div className="footer">

@@ -188,6 +188,8 @@ const Demo = () => {
         </div>
         {
           showHelp && <div className="explaination">
+            <h4 className="headings">Selection</h4>
+            <p className="prefixes">To delete selections, use arrow keys to nagivate and del to remove.</p>
             <h4 className="headings">Lookup and choices</h4>
             <p className="prefixes">Use the below operations to filter the columns. Combinations are possible using &(and) or | (or)</p>
             <h4 className="headings">Text columns</h4>
@@ -220,13 +222,15 @@ const Demo = () => {
               <p className="prefixes">!.0 = not where the number is 0 (Coupon and Haircut regex look for floats)</p>
           </div>
         }
-        <div className="ag-theme-alpine" style={gridStyle}>
+        {
+          !showHelp && <div className="ag-theme-alpine" style={gridStyle}>
             <AgGridReact
               rowData={rowData}
               columnDefs={columnDefs}
               onGridReady={gridReady}
             />
-        </div>
+          </div>
+        }
       </div>
   );
 };

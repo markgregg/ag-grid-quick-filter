@@ -20,7 +20,7 @@ import { OptionType } from "../types/optionType";
 import { LookUp } from "../types/choiceDefinition";
 import { Comparison } from "../types/comparison";
 import { Operand } from "../types/operand";
-import { GridApi } from "ag-grid-community";
+import { GridApi, RowNode } from "ag-grid-community";
 
 export interface AgGridQuickFilterModel {
   definitionMap: Map<string,ChoiceDefinition<any>>;
@@ -167,14 +167,19 @@ export const createAgGridQuickFilterModel = (initialProps: SelectProps) : AgGrid
 
   const getDistinctValuesFromAgGrid = (agGridApi: GridApi, column: string): string[] => {
     const unique = new Set<string>();
-    agGridApi.forEachNodeAfterFilter( row => {
+    const callback = (row: RowNode<any>) => {
       if( row.data ) {
         const value = row.data[column];
         if( value ) {
           unique.add(value);
         }
       }
-    });
+    };
+    if( model.operand ) {
+       agGridApi.forEachNode(callback);
+    } else {
+      agGridApi.forEachNodeAfterFilter(callback);
+    }
     return [...unique].sort();
   }
 
@@ -568,6 +573,7 @@ export const createAgGridQuickFilterModel = (initialProps: SelectProps) : AgGrid
     },
     
     updateSelection: () => {
+      model.selected = [...model.selected];
       model.updateVisibleChoices();
       model.signalChange();
     },

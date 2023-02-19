@@ -17,6 +17,10 @@ interface DemoItemProperties {
   showAgGrid?: boolean
 }
 
+const isMobile = (): boolean => {
+  return window.matchMedia("only screen and (max-width: 600px)").matches;
+}
+
 const DemoItem = (props: DemoItemProperties) => {
   const [showCode, setShowCode] = useState<string>("");
   const [showCopied, setShowCopied] = useState<boolean>(false);
@@ -45,9 +49,7 @@ const DemoItem = (props: DemoItemProperties) => {
   }
 
   const model = aggridApi?.getFilterInstance("value")?.getModel();
-  if( model ) {
-    console.log(model);
-  }
+  
   return (
     <div className="demo" key={"demo" + props.title}>
       <h2 className="demo-title">{props.title}</h2>
@@ -126,9 +128,9 @@ export const categories: Category[] = [
       <div className="demo">
         <DemoItem
           title="Bind to strings"
-          description="The simpliest way to use the universal select - set the options to an array of strings"
+          description="The simpliest way to use the quick filter select - set the options to an array of strings"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Bind String",
             choices: [
               {
@@ -161,9 +163,9 @@ export const categories: Category[] = [
         />
         <DemoItem
           title="Bind to objects"
-          description="Universal select can be bound to objects"
+          description="The quick filter can be bound to objects"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Bind String",
             choices: [
               {
@@ -202,9 +204,9 @@ export const categories: Category[] = [
         />
         <DemoItem
           title="Bind to typed"
-          description="Universal select can be bound to an object that implements OptionType"
+          description="It can also be bound to an object that implements OptionType"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Bind String",
             choices: [
               {
@@ -249,7 +251,7 @@ export const categories: Category[] = [
           title="Single"
           description="Limit users to one selection"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Single select",
             choices: [
               {
@@ -293,7 +295,7 @@ export const categories: Category[] = [
           title="Multi"
           description="Limit users to 3 selections"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Multi Select",
             choices: [
               {
@@ -339,7 +341,7 @@ export const categories: Category[] = [
           title="Look-up"
           description="Use a promise to provide options"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Look-up",
             choices: [
               {
@@ -375,7 +377,7 @@ export const categories: Category[] = [
           title="Cache"
           description="Use a promise to provide and cache results"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Cache",
             choices: [
               {
@@ -410,9 +412,9 @@ export const categories: Category[] = [
         />
         <DemoItem
           title="Expiry"
-          description="Use a promise to provide and cache results. Results expirr after specified time"
+          description="Use a promise to provide and cache results. Results will expire after a specified time"
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Expiry",
             choices: [
               {
@@ -461,7 +463,7 @@ export const categories: Category[] = [
           description="No list, just enter one of the below operators and enter a string. For example !%abc."
           points={["= (equals)", "! (not equals)", "% (contains)", "!% (not contains)", "%< (starts with)", "%> (ends with)", "& (and)", "| (or)"]}
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Custom Text",
             choices: [
               {
@@ -497,7 +499,7 @@ export const categories: Category[] = [
           description="No list, just enter one of the below operators and enter a string. For example <=.5."
           points={["= (equals)", "! (not equals)", "> (greater)", "< (less)", ">= (greater equal)", "<= (less equals)", "& (and)", "| (or)"]}
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Custom Number",
             choices: [
               {
@@ -535,7 +537,7 @@ export const categories: Category[] = [
           description="No list, just enter one of the below operators and enter a number. For example >50."
           points={["= (equals)", "! (not equals)", "> (greater)", "< (less)", "& (and)", "| (or)" ]}
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Cusom Dateas",
             choices: [
               {
@@ -589,9 +591,9 @@ export const categories: Category[] = [
       <div className="demo">
         <DemoItem
           title="Prefixed"
-          description="Limit users to one selection"
+          description="If using multiple sources, selections can be prefixed."
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Prefixed",
             choices: [
               {
@@ -633,9 +635,9 @@ export const categories: Category[] = [
       <div className="demo">
         <DemoItem
           title="Disabled"
-          description="Limit users to one selection"
+          description="The quick fitler can be disabled."
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Disabled",
             choices: [
               {
@@ -677,9 +679,9 @@ export const categories: Category[] = [
       <div className="demo">
         <DemoItem
           title="Ag-Grid"
-          description="The selection can be linked to an a-grid control and requires very little other than a grid reference and a column against the choice definition. "
+          description="Linking selection to an a-grid will filter the ag-grid in response."
           props={{
-            minWidth: "400px",
+            minWidth: isMobile() ? "240px" : "400px",
             title: "Ag-Grid",
             choices: [
               {

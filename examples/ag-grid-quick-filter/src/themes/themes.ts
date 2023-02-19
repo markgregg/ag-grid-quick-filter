@@ -126,7 +126,7 @@ export const applyTheme = (theme: string) => {
         pageColor2: "#dce916",
         pageColor3: "#eaff5c",
         pageColor4: "#b1bc11",
-        pageColor5: "White",
+        pageColor5: "#eaff5c",
         pageFontColor: "Black",
       });
       break;

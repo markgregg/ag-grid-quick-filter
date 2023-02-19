@@ -1,16 +1,21 @@
-.started {
-  height: 700px;
+.started-container {
   width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.started {
+  position: absolute;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
   color: var(--pageFont);
-  font-size: large;
   overflow: auto;
 }
+
 
 .no-space-after {
   margin-block-end: 0.3em;
@@ -24,5 +29,5 @@
 .code-block {
   width: 500px;
   background-color: var(--pageColor1);
-  box-shadow: 6px 6px var(--pageColor4);
+  box-shadow: 2px 2px lightgray;
 }

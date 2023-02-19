@@ -168,10 +168,11 @@ const Demo = () => {
     "--ag-header-column-resize-handle-color": "var(--pageFont)"
   }
 
-  return ( 
+  return (
+    <div className="bond-demo-container">
       <div className="bond-demo">
         <div className="select-area">
-          <div className="help_container">
+          <div className="help-container">
             <div 
               className="help"
               onClick={() => setShowHelp(!showHelp)}
@@ -232,6 +233,7 @@ const Demo = () => {
           </div>
         }
       </div>
+    </div> 
   );
 };
 

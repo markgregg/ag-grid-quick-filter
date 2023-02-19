@@ -1,28 +1,31 @@
-:root {
-  --universalMaxListHeight: 600px;
-}
-
 .frame {
   height: 100vh;
-  width: 95vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page {
-  margin-left: 10%;
-  margin-right: 10%;
-  width: 80%;
+  max-width: 1000px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Open Sans', sans-serif;
+  font-size: medium;
+}
+
+.header {
+  display: inline-block;
+  width: 94%;
+  z-index: 1;
 }
 
 .body {
-  display: inline-block;
-  position: absolute;
-  width: 1200px;
-  padding: 165px 10px 10px;
-  background-color: var(--pageColor1);
+  width: 94%;
+  height: 100%;
   color: var(--pageFont);
 }
 
@@ -42,18 +45,11 @@
   background: url(/public/blue.jpg) no-repeat center center fixed;
 }
 
-.header {
-  display: inline-block;
-  position: absolute;
-  width: 1200px;
-  z-index: 1;
-  color: var(--pageFont);
-}
-
 .heading {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: var(--pageFont);
 }
 
 .title {
@@ -64,39 +60,52 @@
 }
 
 .statement {
+  width: 100%;
+  text-align: center;
   font-weight: 200;
+  margin-block-start: 0.5em;
+  margin-block-end: 1em;
 }
 
 .menu-bar {
   display: flex;
   flex-direction: row;
   width: 100%;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  height: 30%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-radius: 8px;
   background-image: linear-gradient(to right, var(--pageColor3), var(--pageColor2));
   box-shadow: 6px 6px var(--pageColor4);
 }
 
+.menu-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
 .menu {
+  max-width: 300px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
+  justify-content: space-between;
   flex: 1;
 }
 
 .menu-item {
-  width: 80px;
+  max-width: 75px;
+  min-width: 50px;
   font-size: medium;
   font-weight: bold;
   text-align: center;
-  color: var(--universalSelectFontColor);
+  color: var(--solidjsSelectFontColor,var(--pageFont));
+  overflow: hidden;
 }
 
 .menu-item:hover {
-  color: var(--compactSelectFonHighlightColor,darkgray);
+  color: var(--solidjsSelectFonHighlightColor, darkgray);
 }
 
 .menu-text {
@@ -106,18 +115,26 @@
 
 .context {
   width: 100%;
+  height: 100%;
 }
 
 .theme {
+  margin-left: 10px;
   display: block;
   align-self: flex-end;
   --compactSelectBorder: none;
   --compactSelectBackgroundColor: var(--pageColor2);
   --compactSelectHighlightedBackgroundColor: var(--pageColor3);
+  width: 65px;
 }
 
 .clipboardCopy {
   font-weight: bold;
+}
+
+.footer-container {
+  width: 94%;
+  margin-bottom: 10px;
 }
 
 .footer {
@@ -125,7 +142,20 @@
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
-  background-color: var(--pageColor2);
-  color: var(--universalSelectFontColor);
   box-shadow: 6px 6px var(--pageColor4);
+  padding: 15px;
+  background-image: linear-gradient(to right, var(--pageColor3), var(--pageColor2));
+  color: 'var(--solidjsSelectFontColor)';
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-container {
+    height: 0px;
+    overflow: hidden;
+  }
+}
+
+p {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
 }

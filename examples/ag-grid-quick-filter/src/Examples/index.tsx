@@ -19,7 +19,6 @@ const Examples = () => {
       }}
     >
       <VerticalMenu
-        title="Catagories"
         options={categories.map((c) => c.name)}
         onSelect={setDemo}
       />

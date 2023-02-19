@@ -8,8 +8,8 @@ import { applyTheme, themes, Themes } from "./themes/themes";
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
 
-const pages = ["Examples", "Demo", "Getting Started", "Back To Demos"];
- 
+const pages = ['Examples','Get Started', 'Demo', 'More Demos'];
+
 const App = () => {
   const [themeName, setThemeName] = useState<string>(Themes.Plain.toString());
   const [page, setPage] = useState<string>("Demo");
@@ -24,7 +24,7 @@ const App = () => {
   }
 
   const openPage = (page: string) => {
-    if( page === 'Back To Demos') {
+    if( page === 'More Demos') {
       window.location.href = "https://markgregg.github.io/demo-home/"; 
     } else {
       setPage(page);
@@ -33,25 +33,36 @@ const App = () => {
 
   return (
     <div className="frame">
-      <div className="page">
-        <div className="header">
+      <div 
+        className={ "page" + (themeName===Themes.Dark 
+          ? " dark"
+          : themeName===Themes.Light
+            ? " light"
+            : themeName===Themes.Blue
+            ? " blue"
+            : " plain")
+        }
+      >
+        <div className='header'>
           <div className="heading">
-            <h1 className="title">Ag Grid Quick Filter</h1>
+            <h2 className="title">Ag Grid Quick Filter</h2>
             <p className="statement">
-              A powerful, flexible filter control that provide a quick way to filter Ag-Grid
+              A powerful, flexible quick filter
             </p>
           </div>
           <div className="menu-bar">
-            <div className="menu">
-              {pages.map((pg) => (
-                <div
-                  key={pg}
-                  className="menu-item"
-                  onClick={() => openPage(pg)}
-                >
-                  <p className="menu-text">{pg}</p>
-                </div>
-              ))}
+            <div className="menu-container">
+              <div className="menu">
+                {pages.map((pg) => (
+                  <div className="menu-item" onClick={() => openPage(pg)}>
+                    {
+                      ( pg === page) 
+                      ? <u><p className="menu-text">{pg}</p></u>
+                      : <p className="menu-text">{pg}</p> 
+                    }
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="theme">
               <CompactSelect
@@ -62,29 +73,23 @@ const App = () => {
                 choices={themes}
                 selected={themeName}
                 onChange={setTheme}
-                width="80px"
               />
             </div>
           </div>
+
         </div>
-        <div className={"body"+ (themeName===Themes.Dark 
-            ? " dark"
-            : themeName===Themes.Light
-              ? " light"
-              : themeName===Themes.Blue
-              ? " blue"
-              : " plain")
-          }
-        >
+        <div className="body">
           <div className="context">
             {
               (page === "Examples" && <Examples/>) ||
               (page === "Demo" && <Demo/>) ||
-              (page === "Getting Started"  && <GettingStarted/>)
+              (page === "Get Started"  && <GettingStarted/>)
             }
           </div>
+        </div>
+        <div className="footer-container">
           <div className="footer">
-            <p>Created by Mark Gregg</p>
+            <p className="no-padding">Created by Mark Gregg</p>
           </div>
         </div>
       </div>

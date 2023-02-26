@@ -166,7 +166,7 @@ export const categories: Category[] = [
           description="The quick filter can be bound to objects"
           props={{
             minWidth: isMobile() ? "240px" : "400px",
-            title: "Bind String",
+            title: "Bind Object",
             choices: [
               {
                 key: "Words",
@@ -207,7 +207,7 @@ export const categories: Category[] = [
           description="It can also be bound to an object that implements OptionType"
           props={{
             minWidth: isMobile() ? "240px" : "400px",
-            title: "Bind String",
+            title: "Bind Typed",
             choices: [
               {
                 key: "Words",

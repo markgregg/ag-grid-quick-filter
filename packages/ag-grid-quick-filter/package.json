@@ -1,6 +1,6 @@
 {
   "name": "ag-grid-quick-filter",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "description": "A function rich all select that supports multiple data sources and integrates with ag-grid",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",

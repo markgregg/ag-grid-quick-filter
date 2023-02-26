@@ -34,6 +34,7 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const selectRef = useRef<HTMLDivElement>(null);
   const [,refresh] = useState<number>(0);
+  const [titleTop,setTitleTop] = useState<number>(-20);
   const refreshDisplay = () => {
     refresh(performance.now());
   }
@@ -50,6 +51,16 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
     };
   }, []);
 
+  const setTitleRef = (ref: HTMLParagraphElement) => {
+    if( ref && titleTop !== (ref.clientHeight+5) * -1 ) {
+      setTitleTop((ref.clientHeight+5)*-1);
+    }
+  }
+
+  const isMobile = (): boolean => {
+    return window.matchMedia("only screen and (max-width: 600px)").matches;
+  }
+  
   const QuickFiltersalSelectWrapperStyle = (): CSS.Properties => {
     return {
       height: props.height,
@@ -244,7 +255,9 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
         )}
         {!props.hideDropdownIcon && (
           <div className="csQuickFilterDropDownIcon">
-            <span className="csQuickFilterDividor" />
+            {
+              !isMobile() && <span className="csQuickFilterDividor" />
+            }
             {props.dropdownIcon ? (
               <props.dropdownIcon 
                 className={props.dropIconClassName} 
@@ -260,8 +273,12 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
         )}
         {(model.showChoices || model.selected.length > 0) && !props.hideTitle && (
           <p
+            ref={setTitleRef}
             className={"csQuickFilterSelectCommon csQuickFilterSelectfloatingTitle" + titleClassName()}
-            style={titleDisplayStyle()}
+            style={{
+                  top: titleTop,
+                  ...titleDisplayStyle()
+                }}
           >
             {props.title}
           </p>

@@ -1,6 +1,6 @@
 import { FC } from "react";
 import CSS from "csstype";
-import { IoIosClose } from "react-icons/io";
+import { IoIosRemoveCircle } from "react-icons/io";
 import { MouseEvent } from "react";
 import { SelectionProps, SelectionStyle } from "../types";
 import "./FilterSelection.css";
@@ -35,7 +35,7 @@ const FilterSelection: FC<FilterSelectionProps> = ({
   active
 }) => {
 
-  const deselectItem = (event: MouseEvent<HTMLDivElement>) => {
+  const deselectItem = (event: MouseEvent<SVGElement>) => {
     onDeselected(selection);
     event.stopPropagation();
   };
@@ -78,7 +78,7 @@ const FilterSelection: FC<FilterSelectionProps> = ({
       ? ( selectionTextDisabledClassName ? ` ${selectionTextDisabledClassName}` : "" )
       : ( selectionTextClassName ? ` ${selectionTextClassName}` : "" );
 
-  const DeselectIcon: IconType = deselectIcon ?? IoIosClose;
+  const DeselectIcon: IconType = deselectIcon ?? IoIosRemoveCircle;
 
   return (
     <div>
@@ -87,16 +87,20 @@ const FilterSelection: FC<FilterSelectionProps> = ({
         style={getSelectionStyle()}
       >
         {prefix && (
-          <p
-            className={"csQuickFilterPrefixText" + getSelectionPrefixClassName()}
-            style={getSelectionPrefixStyle()}
-          >
-            {prefix}
-          </p>
+          <div className="csQuickFilterTitleDividor">
+            <p
+              className={"csQuickFilterPrefixText" + getSelectionPrefixClassName()}
+              style={getSelectionPrefixStyle()}
+            >
+              {prefix}
+            </p>
+          </div>
+
         )}
         <div className="csQuickFilterContentAlign">
-          <div onClick={deselectItem}>
+          <div className="csQuickFilterDeselectDividor">
             <DeselectIcon
+              onClick={deselectItem}  
               className={"csQuickFilterDeselect" + getDeselectClassName()}
               style={getDeselectStyle()}
             />

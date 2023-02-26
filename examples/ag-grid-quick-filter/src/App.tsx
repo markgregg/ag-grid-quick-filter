@@ -54,7 +54,7 @@ const App = () => {
             <div className="menu-container">
               <div className="menu">
                 {pages.map((pg) => (
-                  <div className="menu-item" onClick={() => openPage(pg)}>
+                  <div key={pg} className="menu-item" onClick={() => openPage(pg)}>
                     {
                       ( pg === page) 
                       ? <u><p className="menu-text">{pg}</p></u>

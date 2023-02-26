@@ -40,10 +40,24 @@
 }
 
 .csQuickFilterDeselect {
-  color: var(--QuickFilterSelectDeslectIconColor);
+  color: var(--QuickFilterSelectDeslectIconColor, red);
   font-size: var(--QuickFilterSelectDeslectIconSize, small);
 }
 
 .csQuickFilterDeselect:hover {
-  color: var(--QuickFilterSelectDeslectHighlightIconColor, Lightgray);
+  color: var(--QuickFilterSelectDeslectHighlightIconColor, #efb6b6);
+}
+
+.csQuickFilterDeselectDividor {
+  align-self: stretch;
+  margin-right: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.csQuickFilterTitleDividor {
+  align-self: stretch;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

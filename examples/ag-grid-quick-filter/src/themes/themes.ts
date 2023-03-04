@@ -19,7 +19,7 @@ type Theme = {
   selectToolTipBackgroundColor: CSS.Property.Color | null;
   selectToolTipBackgroundImage: CSS.Property.BackgroundImage | null;
   selectHighLightBackgroundColor: CSS.Property.Color | null;
-  selectSelectedBackgroundColor: CSS.Property.Color | null;
+  //  selectSelectedBorder: CSS.Property.Border | null;
   selectBorder: CSS.Property.Border | null;
   pageColor1: CSS.Property.BackgroundColor;
   pageColor2: CSS.Property.BackgroundColor;
@@ -35,8 +35,8 @@ const setColors = (theme: Theme) => {
   document.documentElement.style.setProperty("--QuickFilterSelectBackgroundColor", theme.selectBackgroundColor);
   document.documentElement.style.setProperty("--QuickFilterSelectFontColor", theme.selectFontColor);
   document.documentElement.style.setProperty("--QuickFilterSelectDisabledBackgroundColor", theme.selectDisableBackgroundColor);
-  document.documentElement.style.setProperty("--QuickFilterSelectSelectedBackgroundColor", theme.selectSelectedBackgroundColor);
   document.documentElement.style.setProperty("--QuickFilterSelectHighlihtedBackgroundColor", theme.selectHighLightBackgroundColor);
+ // document.documentElement.style.setProperty("--QuickFilterSelectSelectedBorder", theme.selectSelectedBorder);
   document.documentElement.style.setProperty("--QuickFilterSelectBorder", theme.selectBorder !== null ? theme.selectBorder.toString() : null);
   document.documentElement.style.setProperty("--compactSelectBackgroundColor", theme.selectBackgroundColor);
   document.documentElement.style.setProperty("--compactSelectFontColor", theme.selectFontColor);
@@ -57,15 +57,14 @@ export const applyTheme = (theme: string) => {
   switch(theme){
     case Themes.Blue: 
       setColors({
-        selectBackgroundImage: 'linear-gradient(to bottom, #75b7e7, #4f86af)',
-        selectBackgroundColor: null,
-        selectFontColor: "White",
+        selectBackgroundImage: null,
+        selectBackgroundColor: "#75b7e7",
+        selectFontColor: "Black",
         selectFontHighLightColor: "LightGray",
         selectDisableBackgroundColor: "#577b95",
         selectToolTipBackgroundColor: null,
         selectToolTipBackgroundImage: 'linear-gradient(to bottom, #75b7e7, #4f86af)',
         selectHighLightBackgroundColor: "#1c95eb",
-        selectSelectedBackgroundColor: "#1c95eb",
         selectBorder: "none",
         pageColor1: "white",
         pageColor2: "#4f86af",
@@ -78,14 +77,13 @@ export const applyTheme = (theme: string) => {
      case Themes.Dark: 
        setColors({
         selectBackgroundImage: null,
-        selectBackgroundColor: '#0badad',
+        selectBackgroundColor: '#348585',
         selectFontColor: "white",
         selectFontHighLightColor: "lightgray",
         selectDisableBackgroundColor: "#799c9c",
         selectToolTipBackgroundColor: "#0a7b7b",
         selectToolTipBackgroundImage: null,
         selectHighLightBackgroundColor: "#12dddd",
-        selectSelectedBackgroundColor: "#215555",
         selectBorder: "none",
         pageColor1: "Black",
         pageColor2: "#0a7b7b",
@@ -97,15 +95,14 @@ export const applyTheme = (theme: string) => {
       break;
     case Themes.Light: 
       setColors({
-        selectBackgroundImage: 'linear-gradient(to bottom, #f5eaa7, #fadc37)',
-        selectBackgroundColor: null,
+        selectBackgroundImage: null,
+        selectBackgroundColor: '#f5eaa7',
         selectFontColor: "#3D350B",
         selectFontHighLightColor: "DarkGray",
         selectDisableBackgroundColor: "#f7edaf",
         selectToolTipBackgroundColor: null,
         selectToolTipBackgroundImage: 'linear-gradient(to bottom, #F7E575, #f1d520)',
         selectHighLightBackgroundColor: "#EFD233",
-        selectSelectedBackgroundColor: "#f1c420",
         selectBorder: "none",
         pageColor1: "white",
         pageColor2: "#fadc37",
@@ -125,7 +122,6 @@ export const applyTheme = (theme: string) => {
         selectToolTipBackgroundColor: null,
         selectToolTipBackgroundImage: null,
         selectHighLightBackgroundColor: null,
-        selectSelectedBackgroundColor: null,
         selectBorder: null,
         pageColor1: "White",
         pageColor2: "#dce916",
@@ -138,4 +134,3 @@ export const applyTheme = (theme: string) => {
   }
   
 }
-

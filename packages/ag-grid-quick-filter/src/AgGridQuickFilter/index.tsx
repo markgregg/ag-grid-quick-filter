@@ -211,9 +211,9 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
           {
             model.selected.map( (selection, index) => {
               const definition = model.definitionMap.get(selection.key);
-              return constructSelection(
+              
+              var selectJsx = constructSelection(
                 selection,
-                (selection.operand ? `${selection.operand} ` : "") + 
                 (selection.comparison ? `${selection.comparison} ` : "") + 
                   (definition?.showSelectedValue === true
                     ? itemValue(selection.option, definition?.value)
@@ -222,6 +222,16 @@ const AgGridQuickFilter = (props: AgGridQuickFilterProps) => {
                 index,
                 definition?.prefix
               );
+              return index > 0 && model.selected[index-1].key == selection.key
+                ? <>
+                    { 
+                    selection.operand === '&' 
+                      ? 'and'
+                      : 'or' 
+                    }
+                    { selectJsx }
+                  </>
+                : selectJsx
             })
           }
           {model.showChoices && (

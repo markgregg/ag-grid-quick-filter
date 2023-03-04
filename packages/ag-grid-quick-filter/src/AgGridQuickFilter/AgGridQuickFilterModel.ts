@@ -441,7 +441,7 @@ export const createAgGridQuickFilterModel = (initialProps: SelectProps) : AgGrid
       setTimeout(
         () => {
           if( model.selectRef && model.selectRef.current ) {
-            model.listPosition = `${model.selectRef.current?.clientHeight}px` ?? "40px";
+            model.listPosition = `${model.selectRef.current?.clientHeight + 2}px` ?? "40px";
             model.updateDisplay();
           }
         }, 1

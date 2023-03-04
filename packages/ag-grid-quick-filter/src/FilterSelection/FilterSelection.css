@@ -4,18 +4,19 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: var(--QuickFilterSelectSelectedBackgroundColor, Lightgray);
+  background-color: var(--QuickFilterSelectSelectedBackgroundColor);
+  border: var(--QuickFilterSelectSelectedBorder,dashed black 1px);
   background-image: var(--QuickFilterSelectSelectedBackgroundImage);
 }
 
 .csQuickFilterSelectionDisabled {
   color: var(--QuickFilterSelectDisabledFontColor);
-  background-color: var(--QuickFilterSelectDisabledBackgroundColor, Gainsboro);
+  background-color: var(--QuickFilterSelectDisabledBackgroundColor);
   background-image: var(--QuickFilterSelectDisabledBackgroundImage);
 }
 
 .csQuickFilterSelectionActive {
-  background-color: var(--QuickFilterSelectSelectedBackgroundColor, Lightgray);
+  background-color: var(--QuickFilterSelectSelectedBackgroundColor);
   background-image: var(--QuickFilterSelectSelectedBackgroundImage);
   border: var(--QuickFilterSelectSelectedActiveColor, yellow) 2px solid;
 }
